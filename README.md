@@ -1,4 +1,4 @@
-# Minimal Ansible project to demonstrate typical directory structure
+# Trips Ansible project to demonstrate typical directory structure
 
 ```shell
 .
