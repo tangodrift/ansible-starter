@@ -1,15 +1,23 @@
-- name: Gather all available z/OS facts
+- name: Check STCs
   hosts: zos
   gather_facts: false
   environment: "{{ environment_vars }}"
 
   tasks:
-   - name: Display all stc.
-     ibm.ibm_zos_core.zos_job_query:
-     
-   - name: Display the list of STCs
-  var: zos_stc
+  - name: Query a job with a job name of '*'
+    ibm.ibm_zos_core.zos_job_query:
+       job_name: "*"
+    register: result
 
-  -name: print return info from previous task 
-  ansible.builtin.debug:
-    var: zos_stc
+  - name: Display Host Variables
+    ansible.builtin.debug:
+      msg:
+        - "---Print your variables data here---"
+        - "System Info: {{ result }}"
+#        - "System Info: {{ result | to_nice_json }}"
+#    - name: Return all available z/OS facts.
+#      ibm.ibm_zos_core.zos_gather_facts:
+
+#- name: Return z/OS facts in the systems subset ('sys').
+#  ibm.ibm_zos_core.zos_gather_facts:
+#    gather_subset: sys
