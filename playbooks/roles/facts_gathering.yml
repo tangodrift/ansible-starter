@@ -1,0 +1,9 @@
+---
+- name: Ping z/OS node
+  hosts: zos
+  gather_facts: false
+  environment: "{{ environment_vars }}"
+
+  tasks:
+    - name: Return all available z/OS facts.
+      ibm.ibm_zos_facts:
