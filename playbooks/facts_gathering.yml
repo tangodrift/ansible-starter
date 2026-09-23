@@ -7,3 +7,13 @@
   tasks:
    - name: Return all available z/OS facts.
      ibm.ibm_zos_core.zos_gather_facts:
+     gather_subset:
+      - ipl
+      - sys
+     filter:
+      - "*parmlib*"
+  register: result
+
+  -namee: Print return infomation from previous task
+  ansible.builigin.debug:
+  msg: "The gathered facts are: {{ result }}"
