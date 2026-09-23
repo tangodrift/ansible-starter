@@ -17,3 +17,4 @@
   -namee: Print return infomation from previous task
   ansible.builigin.debug:
   msg: "The gathered facts are: {{ result }}"
+  verbosity: 1
