@@ -10,7 +10,7 @@
     - name: Convert local JCL to IBM-037 and submit the job.
   zos_job_submit:
     src: "{{playbook_dir}}/JCL/hello_world.jcl"
-    remote_src: false
+    location: LOCAL
     encoding:
       from: ISO8859-1
       to: IBM-037
