@@ -7,10 +7,10 @@
   environment: "{{ environment_vars }}"
 
   tasks:
-    - name: Convert local JCL to IBM-037 and submit the job.
-  zos_job_submit:
-    src: "{{playbook_dir}}/JCL/hello_world.jcl"
-    location: LOCAL
-    encoding:
-      from: ISO8859-1
-      to: IBM-037ß
+  - name: Convert local JCL to IBM-037 and submit the job.
+    zos_job_submit:
+      src: "{{playbook_dir}}/JCL/hello_world.jcl"
+      location: LOCAL
+      encoding:
+        from: ISO8859-1
+        to: IBM-037
