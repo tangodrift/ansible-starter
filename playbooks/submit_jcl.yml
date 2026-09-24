@@ -13,4 +13,4 @@
     location: LOCAL
     encoding:
       from: ISO8859-1
-      to: IBM-037
+      to: IBM-037ß
