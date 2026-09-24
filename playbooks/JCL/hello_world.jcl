@@ -3,5 +3,5 @@
 //STDOUT   DD SYSOUT=*
 //STDERR   DD SYSOUT=*
 //STDPARM  DD *
- SH echo "Hello, World from z/OS!"
+SH echo "Hello, World from z/OS!"
 /*
